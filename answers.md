@@ -11,7 +11,7 @@
 - **1a.**
 
 Maximum depth where n is number of items and d is the number of comparisons needed
-ℎ=⌈log𝑑(𝑛𝑑−𝑛+1)⌉−1
+h=⌈logd(nd−n+1)⌉−1
 
 
 - **1b.**
@@ -29,8 +29,6 @@ E = number of edges
 d = degree of d-ary heap
 
 Work: O((V + E) * d * logd(V))
-
-account for delete min and insert seperately?
 
 
 - **1d.**
@@ -57,15 +55,14 @@ APSP(1,2,2) = 0
 
 The relationship between APSP(i,j,1) and APSP(i,j,2) is that they are the same.
 
-APSP(i,j,2) = APSP(i,j,1)
+APSP(i,j,2) = APSP(i,j,1) + 0*APSP(i,j,0)
 
-write in terms of  APSP(i,j,0) as well?
 
 - **2c.**
 
 The shortest path is always APSP(i,j,k-1)
 
-give an optimal substructure property?
+This problem has an optimal substructure property since solving the smaller problems leading up to k-1 optimally produce the overall optimal solution
 
 - **2d.**
 
@@ -79,7 +76,7 @@ The work of this dynamic programming algorithm is O(n^3)
 Work of Johnson's: O((V + E) * d * logd(V))
 This one: O(n^3)
 
-which is worse?
+Johnson's is worse
 
 - **3a.**
 
